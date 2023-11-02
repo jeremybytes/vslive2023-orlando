@@ -20,7 +20,7 @@ public class SQLReader : IPersonReader, IDisposable
     public async Task<IReadOnlyCollection<Person>> GetPeople()
     {
         await Task.Delay(1);
-        return context.People!.ToList();
+        return context.People!.OrderBy(p => p.StartDate).ToList();
     }
 
     public Task<Person?> GetPerson(int id)

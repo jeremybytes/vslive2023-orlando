@@ -5,15 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PeopleViewer"
         mc:Ignorable="d"
-        Title="Tight Coupling" Height="550" Width="760"
-        WindowStartupLocation="CenterScreen">
+        Title="Tight Coupling" WindowStartupLocation="CenterScreen" Height="680" Width="1300">
     <Border x:Name="LayoutRoot" Padding="5"
             BorderBrush="{StaticResource ApplicationForeground}" BorderThickness="2" 
             Background="{StaticResource ApplicationBackground}">
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
