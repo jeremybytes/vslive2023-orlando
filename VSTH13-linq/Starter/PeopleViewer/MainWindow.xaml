@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PeopleViewer"
         mc:Ignorable="d"
-        Title="People Viewer" WindowStartupLocation="CenterScreen" Height="760" Width="1300">
+        Title="People Viewer" WindowStartupLocation="CenterScreen" Height="680" Width="1300">
     <Border x:Name="LayoutRoot" Padding="5"
             BorderBrush="{StaticResource ApplicationForeground}" BorderThickness="2" 
             Background="{StaticResource ApplicationBackground}">
@@ -21,19 +21,6 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-
-            <!-- Selected Item Panel -->
-            <Border Grid.Column="0" Grid.Row="0" Margin="5" Padding="10"
-                    BorderBrush="{StaticResource ApplicationTextForeground}" BorderThickness="1">
-                <StackPanel x:Name="DetailPanel" 
-                            DataContext="{Binding ElementName=PersonListBox, Path=SelectedItem}">
-                    <TextBlock Text="Selected Item" Style="{StaticResource HeaderText}" />
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding}"
-                               FontSize="20" FontWeight="Bold"/>
-                    </StackPanel>
-                </StackPanel>
-            </Border>
 
             <!-- Filter Panel -->
             <Border Grid.Column="0" Grid.Row="1" Margin="5" Padding="10"
