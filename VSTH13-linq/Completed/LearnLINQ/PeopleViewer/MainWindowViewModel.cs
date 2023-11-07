@@ -40,7 +40,11 @@ internal partial class MainWindowViewModel : INotifyPropertyChanged
         People = cachedPeople;
 
         if (NameFilterChecked)
+        {
+            //People = Enumerable.Where(People, SelectPerson);
+            //People = People.Where(SelectPerson);
             People = People.Where(p => p.GivenName == NameFilterValue);
+        }
 
         if (DateFilterChecked)
             People = People.Where(p => p.StartDate.Year >= DateFilterStartYear)
@@ -60,6 +64,11 @@ internal partial class MainWindowViewModel : INotifyPropertyChanged
 
         RaisePropertyChanged();
     }
+
+    //private bool SelectPerson(Person person)
+    //{
+    //    return person.GivenName == NameFilterValue;
+    //}
 
     public void ShowAverageRating()
     {
