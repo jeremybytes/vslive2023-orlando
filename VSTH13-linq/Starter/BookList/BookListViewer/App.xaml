@@ -262,7 +262,7 @@
                 <StackPanel>
                     <TextBlock Text="{Binding Key}" Style="{StaticResource ListItemTextStyle}"
                                Foreground="Black"/>
-                    <ListBox ItemsSource="{Binding}" MaxHeight="650">
+                    <ListBox ItemsSource="{Binding}" MaxHeight="600">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -284,7 +284,7 @@
                 <StackPanel>
                     <TextBlock Text="{Binding Key}" Style="{StaticResource ListItemTextStyle}"
                                Foreground="Black"/>
-                    <ListBox ItemsSource="{Binding}" MaxHeight="650">
+                    <ListBox ItemsSource="{Binding}" MaxHeight="600">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -306,7 +306,7 @@
                 <StackPanel>
                     <TextBlock Text="{Binding Key}" Style="{StaticResource ListItemTextStyle}"
                                Foreground="Black"/>
-                    <ListBox ItemsSource="{Binding}" MaxHeight="650">
+                    <ListBox ItemsSource="{Binding}" MaxHeight="600">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -328,7 +328,7 @@
                 <StackPanel>
                     <TextBlock Text="{Binding Key}" Style="{StaticResource ListItemTextStyle}"
                                Foreground="Black"/>
-                    <ListBox ItemsSource="{Binding}" MaxHeight="650">
+                    <ListBox ItemsSource="{Binding}" MaxHeight="600">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
