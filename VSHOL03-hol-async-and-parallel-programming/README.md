@@ -171,6 +171,7 @@ Each of these has a lot of supporting links:
 
 **Other Resources**  
 Stephen Cleary has lots of great articles, books, and practical advice.
+* .NET 8 - [ConfigureAwait in .NET 8](https://blog.stephencleary.com/2023/11/configureawait-in-net-8.html) - Stephen Cleary
 * [Don't Block on Async Code](https://blog.stephencleary.com/2012/07/dont-block-on-async-code.html) - Stephen Cleary
 * [Async/Await - Best Practices in Asynchronous Programming](https://docs.microsoft.com/en-us/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming) - Stephen Cleary
 
