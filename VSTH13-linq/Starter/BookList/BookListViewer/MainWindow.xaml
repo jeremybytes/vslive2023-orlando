@@ -72,9 +72,23 @@
 
                 <!-- Decade Filter -->
                 <CheckBox x:Name="Decade1970sCheckbox" VerticalContentAlignment="Center"
-                          Margin="0, 10, 0, 0"
+                          Margin="0, 20, 0, 0"
                           Content="1970s Only"
                           IsChecked="{Binding LimitTo1970s}"/>
+
+                <!-- Read / Unread -->
+                <GroupBox Margin="0, 20, 0, 0">
+                    <StackPanel>
+                        <CheckBox x:Name="ReadCheckbox" VerticalContentAlignment="Center"
+                          Margin="0, 10, 0, 0"
+                          Content="Read"
+                          IsChecked="{Binding Read}"/>
+                        <CheckBox x:Name="UnreadCheckbox" VerticalContentAlignment="Center"
+                          Margin="0, 10, 0, 0"
+                          Content="Unread"
+                          IsChecked="{Binding Unread}"/>
+                    </StackPanel>
+                </GroupBox>
 
             </StackPanel>
             <!-- List Box -->

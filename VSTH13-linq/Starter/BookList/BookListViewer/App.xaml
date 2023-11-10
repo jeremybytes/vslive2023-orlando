@@ -10,9 +10,10 @@
         <local:RatingStarConverter x:Key="myRatingStarConverter"/>
         <local:DecadeBrushConverter x:Key="myDecadeBrushConverter"/>
         <local:DataTemplateConverter x:Key="myDataTemplateConverter"/>
+        <local:ReadConverter x:Key="myReadConverter" />
 
         <!-- Application Brushes -->
-        <SolidColorBrush x:Key="ApplicationBackground" Color="LightGray"/>
+        <SolidColorBrush x:Key="ApplicationBackground" Color="#EEEEEE"/>
         <SolidColorBrush x:Key="ApplicationForeground" Color="DarkGray"/>
         <SolidColorBrush x:Key="ApplicationTextForeground" Color="DarkSlateGray"/>
         <SolidColorBrush x:Key="ApplicationHighlight" Color="White"/>
@@ -171,6 +172,10 @@
         </Style>
         <Style TargetType="CheckBox">
             <Setter Property="Padding" Value="3"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontWeight" Value="DemiBold"/>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="Foreground" Value="{StaticResource ApplicationTextForeground}"/>
@@ -221,6 +226,9 @@
         <!-- Book List Box Data Template (Flat Author) -->
         <DataTemplate x:Key="FlatAuthorTemplate">
             <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding ExclusiveShelf, Converter={StaticResource myReadConverter}}"
+                           Style="{StaticResource ListTextStyle}"
+                           FontFamily="Consolas" Foreground="Black"/>
                 <TextBlock Text="{Binding Author}" 
                                Style="{StaticResource ListTextStyle}" FontWeight="Bold" Foreground="Black"/>
                 <TextBlock Text="{Binding Title}" 
@@ -233,6 +241,9 @@
         <!-- Book List Box Data Template (Flat Title) -->
         <DataTemplate x:Key="FlatTitleTemplate">
             <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding ExclusiveShelf, Converter={StaticResource myReadConverter}}"
+                           Style="{StaticResource ListTextStyle}"
+                           FontFamily="Consolas" Foreground="Black"/>
                 <TextBlock Text="{Binding Title}" 
                                Style="{StaticResource ListTextStyle}" FontWeight="Bold" Foreground="Black"/>
                 <TextBlock Text="{Binding Author}" 
@@ -245,6 +256,9 @@
         <!-- Book List Box Data Template (Flat Year) -->
         <DataTemplate x:Key="FlatYearTemplate">
             <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding ExclusiveShelf, Converter={StaticResource myReadConverter}}"
+                           Style="{StaticResource ListTextStyle}"
+                           FontFamily="Consolas" Foreground="Black"/>
                 <TextBlock Text="{Binding OriginalPublicationYear}"
                                Style="{StaticResource ListTextStyle}" FontWeight="Bold" Foreground="Black"/>
                 <TextBlock Text="{Binding Author}" 
@@ -262,12 +276,14 @@
                 <StackPanel>
                     <TextBlock Text="{Binding Key}" Style="{StaticResource ListItemTextStyle}"
                                Foreground="Black"/>
-                    <ListBox ItemsSource="{Binding}" MaxHeight="600">
+                    <ListBox ItemsSource="{Binding}" MaxHeight="650">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Title}" Margin="20, 0"/>
-                                    <TextBlock Text="{Binding OriginalPublicationYear}"/>
+                                    <TextBlock Text="{Binding ExclusiveShelf, Converter={StaticResource myReadConverter}}"
+                                            FontFamily="Consolas" Margin="20, 0"/>
+                                    <TextBlock Text="{Binding Title}"/>
+                                    <TextBlock Text="{Binding OriginalPublicationYear}" Margin="20, 0"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -284,12 +300,14 @@
                 <StackPanel>
                     <TextBlock Text="{Binding Key}" Style="{StaticResource ListItemTextStyle}"
                                Foreground="Black"/>
-                    <ListBox ItemsSource="{Binding}" MaxHeight="600">
+                    <ListBox ItemsSource="{Binding}" MaxHeight="650">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding OriginalPublicationYear}" Margin="20, 0"/>
-                                    <TextBlock Text="{Binding Title}"/>
+                                    <TextBlock Text="{Binding ExclusiveShelf, Converter={StaticResource myReadConverter}}"
+                                            FontFamily="Consolas" Margin="20, 0"/>
+                                    <TextBlock Text="{Binding OriginalPublicationYear}"/>
+                                    <TextBlock Text="{Binding Title}" Margin="20, 0"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -306,12 +324,14 @@
                 <StackPanel>
                     <TextBlock Text="{Binding Key}" Style="{StaticResource ListItemTextStyle}"
                                Foreground="Black"/>
-                    <ListBox ItemsSource="{Binding}" MaxHeight="600">
+                    <ListBox ItemsSource="{Binding}" MaxHeight="650">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Author}" FontWeight="Bold" Margin="20, 0"/>
-                                    <TextBlock Text="{Binding Title}"/>
+                                    <TextBlock Text="{Binding ExclusiveShelf, Converter={StaticResource myReadConverter}}"
+                                            FontFamily="Consolas" Margin="20, 0"/>
+                                    <TextBlock Text="{Binding Author}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Title}" Margin="20, 0"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -328,12 +348,14 @@
                 <StackPanel>
                     <TextBlock Text="{Binding Key}" Style="{StaticResource ListItemTextStyle}"
                                Foreground="Black"/>
-                    <ListBox ItemsSource="{Binding}" MaxHeight="600">
+                    <ListBox ItemsSource="{Binding}" MaxHeight="650">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Title}" FontWeight="Bold" Margin="20, 0"/>
-                                    <TextBlock Text="{Binding Author}"/>
+                                    <TextBlock Text="{Binding ExclusiveShelf, Converter={StaticResource myReadConverter}}"
+                                            FontFamily="Consolas" Margin="20, 0"/>
+                                    <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Author}" Margin="20, 0"/>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

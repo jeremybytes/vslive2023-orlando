@@ -111,3 +111,23 @@ public class DataTemplateConverter : IValueConverter
         throw new NotImplementedException();
     }
 }
+
+public class ReadConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        string shelf = (string)value;
+
+        return shelf switch
+        {
+            "read" => "R",
+            "to-read" => " ",
+            _ => "",
+        };
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}

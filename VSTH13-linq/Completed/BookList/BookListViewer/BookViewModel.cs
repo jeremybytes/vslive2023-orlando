@@ -5,8 +5,6 @@ namespace BookListViewer;
 
 public class BookViewModel : INotifyPropertyChanged
 {
-    // TODO READ indicator
-
     private static readonly KeyValuePair<string, string>[] sortList = {
         new KeyValuePair<string, string>("Author", "Author"),
         new KeyValuePair<string, string>("Title", "Title"),
@@ -70,6 +68,20 @@ public class BookViewModel : INotifyPropertyChanged
         set { limitTo1970s = value; UpdateFilterAndSort(); }
     }
 
+    private bool read = true;
+    public bool Read
+    {
+        get { return read; }
+        set { read = value; UpdateFilterAndSort(); }
+    }
+
+    private bool unread = true;
+    public bool Unread
+    {
+        get { return unread; }
+        set { unread = value; UpdateFilterAndSort(); }
+    }
+
     private string? primarySort = "Author";
     public string? PrimarySort
     {
@@ -110,6 +122,8 @@ public class BookViewModel : INotifyPropertyChanged
     {
         searchText = "";
         limitTo1970s = false;
+        read = true;
+        unread = true;
         grouping = "None";
         primarySort = "Author";
         secondarySort = "Title";
@@ -159,6 +173,13 @@ public class BookViewModel : INotifyPropertyChanged
     {
         if (limitTo1970s)
             data = data.Where(b => b.OriginalPublicationYear >= 1970 && b.OriginalPublicationYear <= 1979);
+
+        data = (Read, Unread) switch
+        {
+            (true, false) => data.Where(b => b.ExclusiveShelf == "read"),
+            (false, true) => data.Where(b => b.ExclusiveShelf == "to-read"),
+            _ => data,
+        };
 
         if (string.IsNullOrEmpty(SearchText.Trim())) return data;
         return data
