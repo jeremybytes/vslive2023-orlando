@@ -30,7 +30,7 @@ public partial class MainWindow : Window
             {
                 // The next iteration of the loop will not
                 // run until this one is complete
-                var person = await reader.GetPersonAsync(id, tokenSource.Token);
+                var person = await reader.GetPersonAsync(id);
                 PersonListBox.Items.Add(person);
             }
         }
@@ -65,7 +65,7 @@ public partial class MainWindow : Window
 
                 foreach (int id in ids)
                 {
-                    Task<Person> personTask = reader.GetPersonAsync(id, tokenSource.Token);
+                    Task<Person> personTask = reader.GetPersonAsync(id);
                     Task continuation = personTask.ContinueWith(task =>
                     {
                         Person person = task.Result;
@@ -151,7 +151,7 @@ public partial class MainWindow : Window
     private async Task FetchPerson(int id, ChannelWriter<Person> channelWriter,
         CancellationToken cancelToken)
     {
-        var person = await reader.GetPersonAsync(id, cancelToken);
+        var person = await reader.GetPersonAsync(id);
         await channelWriter.WriteAsync(person);
     }
 
